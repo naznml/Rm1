@@ -1,0 +1,2818 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Методика преподавания русского языка — Термины и методологическая база</title>
+
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --card: #ffffff;
+      --text: #222222;
+      --muted: #6f6f6f;
+      --line: #e6e1da;
+      --accent: #5f4b32;
+      --accent-soft: #efe7dc;
+      --good: #1f7a4d;
+      --bad: #a73a32;
+      --warn: #9a6a1f;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(30, 25, 18, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 18px 80px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ffffff 0%, #f2ece3 100%);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 38px;
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 1.18;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(30px, 4vw, 52px);
+      letter-spacing: -0.04em;
+      max-width: 900px;
+    }
+
+    h2 {
+      font-size: clamp(25px, 3vw, 36px);
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 22px;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 880px;
+      margin-top: 16px;
+    }
+
+    .top-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 22px 0;
+    }
+
+    .source-card,
+    .card,
+    .section,
+    .test-card,
+    .term-card,
+    .topic-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .source-card {
+      padding: 20px;
+    }
+
+    .source-number {
+      display: inline-flex;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #f1eee9;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .source-card h3 {
+      font-size: 19px;
+    }
+
+    .source-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 28px;
+    }
+
+    .nav a {
+      padding: 10px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: #41382f;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .book {
+      margin-top: 34px;
+    }
+
+    .book-head {
+      padding: 26px;
+      border-radius: 24px;
+      background: #2d261d;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+
+    .book-head .meta {
+      color: #d6c9b9;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .book-head p {
+      color: #e7dfd4;
+      max-width: 900px;
+    }
+
+    .section {
+      padding: 24px;
+      margin: 18px 0;
+    }
+
+    .section-label {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #f3f0eb;
+      color: #4c4035;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .tag.level {
+      background: #eee5d7;
+      color: #6c4c22;
+    }
+
+    .compact-list {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    .compact-list li {
+      margin: 5px 0;
+    }
+
+    .terms {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .term-card {
+      padding: 16px;
+      box-shadow: none;
+    }
+
+    .term-card b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+
+    .term-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .source-note {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #fbfaf8;
+      border: 1px dashed #d8d0c5;
+      color: #5e554c;
+      font-size: 14px;
+    }
+
+    .test-block {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .test-title {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .test-title h4 {
+      margin: 0;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .test-card {
+      padding: 18px;
+      margin: 14px 0;
+      box-shadow: none;
+    }
+
+    .question-head {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .q-number {
+      flex: 0 0 auto;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .q-text {
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .options {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .option {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 8px;
+      align-items: start;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .option input {
+      margin-top: 5px;
+      accent-color: var(--accent);
+    }
+
+    .option span {
+      font-size: 15px;
+    }
+
+    .check-btn {
+      border: 0;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 999px;
+      padding: 11px 16px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+
+    .check-btn:hover {
+      opacity: 0.92;
+    }
+
+    .result {
+      display: none;
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 14px;
+      background: #fbfaf8;
+      border: 1px solid var(--line);
+    }
+
+    .result.show {
+      display: block;
+    }
+
+    .result.good {
+      border-color: rgba(31, 122, 77, 0.35);
+      background: #f3faf6;
+    }
+
+    .result.partial {
+      border-color: rgba(154, 106, 31, 0.35);
+      background: #fff8eb;
+    }
+
+    .result.bad {
+      border-color: rgba(167, 58, 50, 0.35);
+      background: #fff4f2;
+    }
+
+    .result b.good-text {
+      color: var(--good);
+    }
+
+    .result b.warn-text {
+      color: var(--warn);
+    }
+
+    .result b.bad-text {
+      color: var(--bad);
+    }
+
+    .mini-divider {
+      height: 1px;
+      background: var(--line);
+      margin: 18px 0;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        padding: 18px 12px 60px;
+      }
+
+      .hero {
+        padding: 24px;
+      }
+
+      .top-grid,
+      .terms {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 18px;
+      }
+
+      .book-head {
+        padding: 20px;
+      }
+
+      .option {
+        grid-template-columns: 24px 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <section class="hero">
+      <div class="eyebrow">КТ в магистратуру · Методика преподавания русского языка</div>
+      <h1>Сайт 2. Термины и методологическая база</h1>
+      <p class="lead">
+        Минималистичный тренажёр по официальной литературе тест-центра. Материал расположен сверху вниз:
+        сначала две книги, затем нужные КТ-разделы, краткая теория, термины и тесты по каждому разделу.
+      </p>
+    </section>
+
+    <section class="top-grid" id="books">
+      <article class="source-card">
+        <div class="source-number">Официальная литература №1</div>
+        <h3>Азимов Э.Г., Щукин А.Н.</h3>
+        <p>
+          <b>Новый словарь методических терминов и понятий</b>
+          <br>
+          Теория и практика обучения языкам. М.: ИКАР, 2009. — 448 с.
+        </p>
+      </article>
+
+      <article class="source-card">
+        <div class="source-number">Официальная литература №9</div>
+        <h3>Новиков А.М., Новиков Д.А.</h3>
+        <p>
+          <b>Методология: словарь системы основных понятий</b>
+          <br>
+          М.: Либроком, 2013. — 208 с.
+        </p>
+      </article>
+    </section>
+
+    <nav class="nav">
+      <a href="#azimov">№1 Азимов, Щукин</a>
+      <a href="#az-1">Методика и терминосистема</a>
+      <a href="#az-2">Подходы и система обучения</a>
+      <a href="#az-3">Принципы обучения</a>
+      <a href="#az-4">Речевая деятельность</a>
+      <a href="#novikov">№9 Новиковы</a>
+    </nav>
+
+    <section class="section">
+      <div class="section-label">
+        <span class="tag">Как пользоваться сайтом</span>
+        <span class="tag level">КТ-формат</span>
+      </div>
+      <h2>Что включено в этот сайт</h2>
+      <p>
+        Сайт не повторяет весь словарь подряд. Включены только те понятия, которые связаны с официальными темами КТ:
+        методика как наука, цели и подходы, принципы, технологии и методы обучения, речевая деятельность,
+        упражнения, контроль и профессиональная компетентность учителя.
+      </p>
+      <p>
+        Тесты составлены по закрытому типу: в одном вопросе может быть один или несколько правильных ответов.
+        Если правильных признаков в источнике больше трёх, в вопросе берутся не более трёх, остальные варианты
+        сделаны близкими по теме, но фактически неверными.
+      </p>
+    </section>
+
+    <section class="book" id="azimov">
+      <div class="book-head">
+        <div class="meta">Официальная литература №1</div>
+        <h2>Азимов Э.Г., Щукин А.Н. Новый словарь методических терминов и понятий</h2>
+        <p>
+          В этой книге берём не все 2500 словарных статей, а только термины, которые прямо помогают подготовиться
+          к КТ по методике преподавания русского языка: базовые категории методики, подходы, принципы, речевая
+          деятельность, упражнения, контроль, тестирование, компетенции.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="az-1">
+      <div class="section-label">
+        <span class="tag">Раздел 1</span>
+        <span class="tag">КТ: тема 1</span>
+        <span class="tag">КТ: тема 2</span>
+        <span class="tag level">A–B</span>
+      </div>
+
+      <h2>Методика и терминосистема обучения языкам</h2>
+      <p>
+        В предисловии словаря подчёркивается, что основные категории и понятия методики являются базой науки
+        и показателем её развития. Главная цель словаря — систематизация терминологических единиц методики
+        обучения языкам через определение понятий, которые они отражают.
+      </p>
+
+      <div class="terms">
+        <div class="term-card">
+          <b>Методическая терминология</b>
+          <span>
+            Совокупность терминов и понятий, через которые описываются теория и практика обучения языкам.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Терминосистема методики</b>
+          <span>
+            Упорядоченная система понятий методики, связанная с целями, содержанием, принципами,
+            методами и процессом обучения.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Лингводидактика</b>
+          <span>
+            Область, связанная с теорией обучения языку, его содержанием, условиями усвоения и организацией обучения.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Базисные дисциплины методики</b>
+          <span>
+            Педагогика, психология, психолингвистика, языкознание, социология, культурология и другие науки,
+            на которые опирается методика.
+          </span>
+        </div>
+      </div>
+
+      <div class="source-note">
+        Источник: Азимов Э.Г., Щукин А.Н. Новый словарь методических терминов и понятий. Предисловие, с. 3–6.
+      </div>
+
+      <div class="test-block">
+        <div class="test-title">
+          <h4>Тест по разделу 1</h4>
+          <span class="hint">Выберите один или несколько правильных ответов.</span>
+        </div>
+
+        <article class="test-card" data-answer="B,C,E">
+          <div class="question-head">
+            <div class="q-number">1</div>
+            <div class="q-text">
+              Положения, соответствующие назначению словаря методических терминов Азимова и Щукина
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Описание только орфографических норм русского языка</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Систематизация терминологических единиц методики обучения языкам</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Упорядочение терминосистемы методики через определение понятий</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Составление школьной программы по всем гуманитарным предметам</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Описание понятий из теории и практики преподавания языков</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Замена методики общей культурологической справочной системой</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, C, E.</p>
+            <p>
+              <b>Объяснение:</b> в предисловии указано, что словарь систематизирует терминологические единицы
+              методики обучения языкам, упорядочивает терминосистему и содержит статьи по теории и практике
+              преподавания языков.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, предисловие, с. 3–6.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="A,D">
+          <div class="question-head">
+            <div class="q-number">2</div>
+            <div class="q-text">
+              Базисные для методики дисциплины, прямо названные в предисловии словаря
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Педагогика</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Бухгалтерский учёт</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Теория предпринимательства</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Психолингвистика</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Транспортная логистика</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Геодезия</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, D.</p>
+            <p>
+              <b>Объяснение:</b> в предисловии словаря названы базисные для методики дисциплины, среди них
+              педагогика, психология, психолингвистика, языкознание, социология, культурология. В вопросе
+              правильными выбраны два фактически указанных компонента.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, предисловие, с. 3.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="C">
+          <div class="question-head">
+            <div class="q-number">3</div>
+            <div class="q-text">
+              Основные категории и понятия методики в предисловии словаря рассматриваются как
+            </div>
+          </div>
+
+          <label class="option"><input type="radio" name="az1q3" value="A"><span>Второстепенные справочные элементы без научной функции</span></label>
+          <label class="option"><input type="radio" name="az1q3" value="B"><span>Средства описания только письменной речи учащихся</span></label>
+          <label class="option"><input type="radio" name="az1q3" value="C"><span>База науки и показатель уровня её развития</span></label>
+          <label class="option"><input type="radio" name="az1q3" value="D"><span>Технические инструкции для оформления учебных пособий</span></label>
+          <label class="option"><input type="radio" name="az1q3" value="E"><span>Перечень школьных тем без связи с научной системой</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> C.</p>
+            <p>
+              <b>Объяснение:</b> авторы подчёркивают, что основные категории и понятия методики служат базой науки
+              и одновременно показывают уровень её развития.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, предисловие, с. 3.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="B,D,F">
+          <div class="question-head">
+            <div class="q-number">4</div>
+            <div class="q-text">
+              Характеристики словарной статьи в книге Азимова и Щукина
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Термины расположены по степени частотности в устной речи</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Заголовочные слова расположены в алфавитном порядке</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Каждый термин даётся только в форме глагольной конструкции</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>В ряде статей приводится происхождение термина</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Синонимы исключаются из словаря как неметодические единицы</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Для некоторых терминов указываются отсылки к связанным статьям</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, D, F.</p>
+            <p>
+              <b>Объяснение:</b> в предисловии описано, что термины расположены по алфавиту, отдельные статьи
+              содержат этимологию, а система отсылок помогает связать термин с другими понятиями.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, предисловие, с. 4–6.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="az-2">
+      <div class="section-label">
+        <span class="tag">Раздел 2</span>
+        <span class="tag">КТ: тема 2</span>
+        <span class="tag">КТ: тема 3</span>
+        <span class="tag level">A–B</span>
+      </div>
+
+      <h2>Подходы и система обучения языку</h2>
+      <p>
+        В тематическом указателе словаря отдельный блок посвящён системе обучения языку и подходам к обучению:
+        коммуникативному, когнитивному, компетентностному, деятельностному, личностно-ориентированному,
+        социокультурному и другим. Для КТ важны не все названия подряд, а те, которые связаны с методологической
+        системой преподавания русского языка.
+      </p>
+
+      <div class="terms">
+        <div class="term-card">
+          <b>Подход к обучению</b>
+          <span>
+            Исходная методологическая позиция, определяющая цели, содержание, принципы, методы и организацию обучения.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Коммуникативный подход</b>
+          <span>
+            Ориентирует обучение на овладение речевой деятельностью и практическое использование языка в общении.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Когнитивный подход</b>
+          <span>
+            Связан с процессами познания, понимания, переработки информации и осознанного усвоения языковых явлений.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Компетентностный подход</b>
+          <span>
+            Направляет обучение на формирование способностей применять знания, умения и опыт в реальной деятельности.
+          </span>
+        </div>
+      </div>
+
+      <div class="source-note">
+        Источник: Азимов Э.Г., Щукин А.Н. Тематический указатель терминов. Блок «Система обучения языку. Подходы к обучению», с. 431–433.
+      </div>
+
+      <div class="test-block">
+        <div class="test-title">
+          <h4>Тест по разделу 2</h4>
+          <span class="hint">Выберите один или несколько правильных ответов.</span>
+        </div>
+
+        <article class="test-card" data-answer="A,C,E">
+          <div class="question-head">
+            <div class="q-number">1</div>
+            <div class="q-text">
+              Подходы к обучению, представленные в тематическом указателе словаря в составе системы обучения языку
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Коммуникативный подход</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Биржевой подход</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Когнитивный подход</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Складской подход</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Компетентностный подход</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Производственно-сырьевой подход</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, C, E.</p>
+            <p>
+              <b>Объяснение:</b> в тематическом указателе словаря среди подходов к обучению языку названы
+              коммуникативный, когнитивный и компетентностный подходы. Остальные варианты не относятся
+              к методике обучения языку.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, тематический указатель, с. 431–433.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="B">
+          <div class="question-head">
+            <div class="q-number">2</div>
+            <div class="q-text">
+              Подход, который в современной методике обеспечивает практическую направленность обучения и ориентирует на овладение речевой деятельностью
+            </div>
+          </div>
+
+          <label class="option"><input type="radio" name="az2q2" value="A"><span>Формально-классификационный подход</span></label>
+          <label class="option"><input type="radio" name="az2q2" value="B"><span>Коммуникативный подход</span></label>
+          <label class="option"><input type="radio" name="az2q2" value="C"><span>Архивно-документальный подход</span></label>
+          <label class="option"><input type="radio" name="az2q2" value="D"><span>Статистико-учётный подход</span></label>
+          <label class="option"><input type="radio" name="az2q2" value="E"><span>Номенклатурный подход</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B.</p>
+            <p>
+              <b>Объяснение:</b> в статье о принципах обучения сказано, что принцип коммуникативности обеспечивает
+              практическую направленность обучения и ориентирует на овладение речевой деятельностью.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, статья «Принципы обучения», с. 242–243.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="A,D">
+          <div class="question-head">
+            <div class="q-number">3</div>
+            <div class="q-text">
+              Методические ориентиры, связанные с подходом к обучению
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Определение исходной позиции обучения</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Подмена учебной цели случайной темой урока</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Исключение содержания обучения из методической системы</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Связь целей, содержания, принципов и методов обучения</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Отказ от учёта условий обучения и контингента учащихся</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Ограничение обучения механическим списком терминов</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, D.</p>
+            <p>
+              <b>Объяснение:</b> подход задаёт исходную методологическую позицию и влияет на элементы системы
+              обучения: цели, содержание, принципы, методы и организацию учебного процесса.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, тематический указатель и статьи по подходам, с. 431–433.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="az-3">
+      <div class="section-label">
+        <span class="tag">Раздел 3</span>
+        <span class="tag">КТ: тема 4</span>
+        <span class="tag level">B</span>
+      </div>
+
+      <h2>Принципы обучения в методике</h2>
+      <p>
+        Принципы обучения в словаре названы базисной категорией методики. Они задают исходные требования
+        к учебному процессу в целом и к его составляющим: целям, знаниям, методам, процессу обучения.
+        В словаре выделяются группы принципов: лингвистические, психологические, дидактические и методические.
+      </p>
+
+      <div class="terms">
+        <div class="term-card">
+          <b>Принципы обучения</b>
+          <span>
+            Исходные требования к учебному процессу, его целям, содержанию, методам и организации.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Методические принципы</b>
+          <span>
+            Принципы, непосредственно определяющие специфику обучения языку в конкретных условиях.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Принцип коммуникативности</b>
+          <span>
+            Ведущий принцип, ориентирующий обучение на практическое владение речевой деятельностью.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Открытая система принципов</b>
+          <span>
+            Система принципов допускает включение новых принципов и переосмысление уже существующих.
+          </span>
+        </div>
+      </div>
+
+      <div class="source-note">
+        Источник: Азимов Э.Г., Щукин А.Н. Статья «Принципы обучения», с. 242–243.
+      </div>
+
+      <div class="test-block">
+        <div class="test-title">
+          <h4>Тест по разделу 3</h4>
+          <span class="hint">Выберите один или несколько правильных ответов.</span>
+        </div>
+
+        <article class="test-card" data-answer="B,D,F">
+          <div class="question-head">
+            <div class="q-number">1</div>
+            <div class="q-text">
+              Группы принципов обучения, выделяемые в словаре Азимова и Щукина
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Административные</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Лингвистические</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Финансовые</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Психологические</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Техническо-учётные</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Методические</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, D, F.</p>
+            <p>
+              <b>Объяснение:</b> в статье названы четыре группы принципов: лингвистические, психологические,
+              дидактические и методические. В вопросе выбраны три из них.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, статья «Принципы обучения», с. 242–243.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="C">
+          <div class="question-head">
+            <div class="q-number">2</div>
+            <div class="q-text">
+              Базисная категория методики, задающая исходные требования к учебному процессу
+            </div>
+          </div>
+
+          <label class="option"><input type="radio" name="az3q2" value="A"><span>Календарный список тем</span></label>
+          <label class="option"><input type="radio" name="az3q2" value="B"><span>Жанровая классификация текстов</span></label>
+          <label class="option"><input type="radio" name="az3q2" value="C"><span>Принципы обучения</span></label>
+          <label class="option"><input type="radio" name="az3q2" value="D"><span>Внешняя форма учебника</span></label>
+          <label class="option"><input type="radio" name="az3q2" value="E"><span>Список технических устройств</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> C.</p>
+            <p>
+              <b>Объяснение:</b> словарь прямо определяет принципы обучения как базисную категорию методики,
+              которая даёт представление об исходных требованиях к учебному процессу.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, статья «Принципы обучения», с. 242–243.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="A,C,E">
+          <div class="question-head">
+            <div class="q-number">3</div>
+            <div class="q-text">
+              Методические принципы, указанные в алфавитном и тематическом указателях словаря
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Принцип коммуникативности</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Принцип товарного оборота</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Принцип наглядности</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Принцип кассового обслуживания</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Принцип систематичности и последовательности</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Принцип коммерческой ликвидности</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, C, E.</p>
+            <p>
+              <b>Объяснение:</b> в словаре среди принципов обучения представлены коммуникативность,
+              наглядность, систематичность и последовательность. Остальные варианты не относятся
+              к методическим принципам обучения языку.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, алфавитный и тематический указатели, с. 412–433.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="D">
+          <div class="question-head">
+            <div class="q-number">4</div>
+            <div class="q-text">
+              Свойство системы принципов обучения, отмеченное в словаре
+            </div>
+          </div>
+
+          <label class="option"><input type="radio" name="az3q4" value="A"><span>Полная неизменяемость состава принципов</span></label>
+          <label class="option"><input type="radio" name="az3q4" value="B"><span>Независимость принципов от цели обучения</span></label>
+          <label class="option"><input type="radio" name="az3q4" value="C"><span>Исключение связи между группами принципов</span></label>
+          <label class="option"><input type="radio" name="az3q4" value="D"><span>Открытость и возможность переосмысления</span></label>
+          <label class="option"><input type="radio" name="az3q4" value="E"><span>Замена принципов перечнем упражнений</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> D.</p>
+            <p>
+              <b>Объяснение:</b> в статье подчёркивается, что система принципов обучения является открытой:
+              она допускает включение новых принципов и переосмысление существующих.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, статья «Принципы обучения», с. 242–243.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+        <section class="section" id="az-4">
+      <div class="section-label">
+        <span class="tag">Раздел 4</span>
+        <span class="tag">КТ: тема 5</span>
+        <span class="tag">КТ: тема 6</span>
+        <span class="tag level">A–B–C</span>
+      </div>
+
+      <h2>Речевая деятельность: аудирование, говорение, чтение, письмо</h2>
+      <p>
+        Для КТ важны виды речевой деятельности и связанные с ними умения: восприятие речи, порождение речи,
+        понимание текста, письменное оформление мысли. В словаре Азимова и Щукина речевая деятельность
+        раскрывается через систему терминов: аудирование, говорение, чтение, письмо, речевые навыки,
+        речевые умения, речевая компетенция, коммуникативные умения.
+      </p>
+
+      <div class="terms">
+        <div class="term-card">
+          <b>Аудирование</b>
+          <span>
+            Восприятие и понимание звучащей речи; связано с рецептивной стороной речевого общения.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Говорение</b>
+          <span>
+            Продуктивный вид речевой деятельности, направленный на устное выражение мысли.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Чтение</b>
+          <span>
+            Вид речевой деятельности, связанный с восприятием и смысловой переработкой письменного текста.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Письмо</b>
+          <span>
+            Вид речевой деятельности, обеспечивающий письменное выражение содержания и оформление текста.
+          </span>
+        </div>
+      </div>
+
+      <div class="source-note">
+        Источник: Азимов Э.Г., Щукин А.Н. Тематический указатель терминов: речевая деятельность, речевые навыки,
+        речевые умения, компетенции, с. 436–437.
+      </div>
+
+      <div class="test-block">
+        <div class="test-title">
+          <h4>Тест по разделу 4</h4>
+          <span class="hint">Выберите один или несколько правильных ответов.</span>
+        </div>
+
+        <article class="test-card" data-answer="A,C,F">
+          <div class="question-head">
+            <div class="q-number">1</div>
+            <div class="q-text">
+              Виды речевой деятельности, входящие в содержание официальной темы КТ
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Аудирование</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Калькирование</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Говорение</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Транслитерация</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Рубрикация</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Чтение</span></label>
+          <label class="option"><input type="checkbox" value="G"><span>Корректура</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, C, F.</p>
+            <p>
+              <b>Объяснение:</b> в официальной структуре КТ тема речедеятельностных основ общения включает
+              аудирование, говорение, чтение, письмо и письменную речь. В вопросе выбраны три вида речевой деятельности.
+            </p>
+            <p><b>Источник:</b> Спецификация КТ; Официальная литература №1, тематический указатель, с. 436–437.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="B,E">
+          <div class="question-head">
+            <div class="q-number">2</div>
+            <div class="q-text">
+              Рецептивные виды речевой деятельности
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Говорение</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Аудирование</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Письменное изложение собственной позиции</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Устное монологическое высказывание</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Чтение</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Диалогическое продуцирование речи</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, E.</p>
+            <p>
+              <b>Объяснение:</b> аудирование и чтение относятся к восприятию и пониманию речи, поэтому являются
+              рецептивными видами речевой деятельности. Говорение и письмо связаны с продуцированием речи.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, статьи и указатель по речевой деятельности, с. 436–437.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="D">
+          <div class="question-head">
+            <div class="q-number">3</div>
+            <div class="q-text">
+              Вид речевой деятельности, направленный на восприятие и понимание звучащей речи
+            </div>
+          </div>
+
+          <label class="option"><input type="radio" name="az4q3" value="A"><span>Списывание</span></label>
+          <label class="option"><input type="radio" name="az4q3" value="B"><span>Пересказ</span></label>
+          <label class="option"><input type="radio" name="az4q3" value="C"><span>Письменное редактирование</span></label>
+          <label class="option"><input type="radio" name="az4q3" value="D"><span>Аудирование</span></label>
+          <label class="option"><input type="radio" name="az4q3" value="E"><span>Конспектирование</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> D.</p>
+            <p>
+              <b>Объяснение:</b> аудирование связано с восприятием звучащей речи и её пониманием.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, тематический указатель по речевой деятельности, с. 436–437.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="A,D,F">
+          <div class="question-head">
+            <div class="q-number">4</div>
+            <div class="q-text">
+              Коммуникативные умения, связанные с восприятием и пониманием текста
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Определять тему и основную мысль текста</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Подбирать бухгалтерскую форму отчётности</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Составлять производственную смету</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Устанавливать стиль текста и тип речи</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Определять рыночную стоимость материала</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Адекватно воспринимать содержание и языковые средства</span></label>
+          <label class="option"><input type="checkbox" value="G"><span>Оформлять технический акт закупки</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, D, F.</p>
+            <p>
+              <b>Объяснение:</b> эти действия относятся к пониманию текста и восприятию речевого сообщения:
+              ученик определяет тему, основную мысль, стиль, тип речи, содержание и языковые средства.
+            </p>
+            <p><b>Источник:</b> Официальная структура КТ и образец теста по методике преподавания русского языка.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="az-5">
+      <div class="section-label">
+        <span class="tag">Раздел 5</span>
+        <span class="tag">КТ: тема 8</span>
+        <span class="tag">КТ: тема 3</span>
+        <span class="tag level">B–C</span>
+      </div>
+
+      <h2>Упражнения как средство организации учебного процесса</h2>
+      <p>
+        Упражнения в методике рассматриваются как организационно-технологическое средство обучения.
+        Для КТ важно различать виды упражнений по их функции: тренировочные, речевые, языковые,
+        коммуникативные, контрольные, подготовительные, творческие, трансформационные, подстановочные.
+      </p>
+
+      <div class="terms">
+        <div class="term-card">
+          <b>Упражнение</b>
+          <span>
+            Учебное действие, направленное на формирование, закрепление или контроль знания, навыка, умения.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Тренировочные упражнения</b>
+          <span>
+            Используются для закрепления языкового материала и автоматизации учебных действий.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Коммуникативные упражнения</b>
+          <span>
+            Организуют речевое действие в условиях, приближённых к общению.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Контрольные упражнения</b>
+          <span>
+            Используются для проверки уровня сформированности знаний, навыков и умений.
+          </span>
+        </div>
+      </div>
+
+      <div class="source-note">
+        Источник: Азимов Э.Г., Щукин А.Н. Тематический указатель терминов: блок «Упражнения», с. 438.
+      </div>
+
+      <div class="test-block">
+        <div class="test-title">
+          <h4>Тест по разделу 5</h4>
+          <span class="hint">Выберите один или несколько правильных ответов.</span>
+        </div>
+
+        <article class="test-card" data-answer="B,C,E">
+          <div class="question-head">
+            <div class="q-number">1</div>
+            <div class="q-text">
+              Виды упражнений, представленные в тематическом указателе словаря
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Инвентаризационные упражнения</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Коммуникативные упражнения</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Трансформационные упражнения</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Тарифные упражнения</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Подстановочные упражнения</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Складские упражнения</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, C, E.</p>
+            <p>
+              <b>Объяснение:</b> в тематическом указателе словаря перечислены коммуникативные, трансформационные,
+              подстановочные и другие виды упражнений. Остальные варианты не относятся к методической типологии упражнений.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, тематический указатель, с. 438.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="D">
+          <div class="question-head">
+            <div class="q-number">2</div>
+            <div class="q-text">
+              Упражнения, предназначенные для проверки уровня сформированности знаний, навыков и умений
+            </div>
+          </div>
+
+          <label class="option"><input type="radio" name="az5q2" value="A"><span>Подготовительные упражнения</span></label>
+          <label class="option"><input type="radio" name="az5q2" value="B"><span>Творческие упражнения</span></label>
+          <label class="option"><input type="radio" name="az5q2" value="C"><span>Рецептивные упражнения</span></label>
+          <label class="option"><input type="radio" name="az5q2" value="D"><span>Контрольные упражнения</span></label>
+          <label class="option"><input type="radio" name="az5q2" value="E"><span>Послетекстовые упражнения</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> D.</p>
+            <p>
+              <b>Объяснение:</b> контрольные упражнения соотносятся с функцией проверки результата обучения.
+              Они используются для выявления уровня усвоения знаний, навыков и умений.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, тематический указатель «Упражнения», с. 438.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="A,C">
+          <div class="question-head">
+            <div class="q-number">3</div>
+            <div class="q-text">
+              Упражнения, которые могут быть связаны с работой над текстом
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Предтекстовые упражнения</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Кассовые упражнения</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Послетекстовые упражнения</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Таможенные упражнения</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Сметные упражнения</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Сырьевые упражнения</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, C.</p>
+            <p>
+              <b>Объяснение:</b> предтекстовые и послетекстовые упражнения относятся к организации работы с текстом.
+              Они выделены в указателе среди видов упражнений.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, тематический указатель «Упражнения», с. 438.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="B,E,G">
+          <div class="question-head">
+            <div class="q-number">4</div>
+            <div class="q-text">
+              Упражнения, ориентированные на изменение или преобразование языкового материала
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Рейтинговые упражнения</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Трансформационные упражнения</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Экзаменационные упражнения</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Регистрационные упражнения</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Подстановочные упражнения</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Сертификационные упражнения</span></label>
+          <label class="option"><input type="checkbox" value="G"><span>Трансформативные упражнения</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, E, G.</p>
+            <p>
+              <b>Объяснение:</b> трансформационные, трансформативные и подстановочные упражнения предполагают
+              изменение, замену или преобразование языкового материала в заданной учебной операции.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, тематический указатель «Упражнения», с. 438.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="az-6">
+      <div class="section-label">
+        <span class="tag">Раздел 6</span>
+        <span class="tag">КТ: тема 9</span>
+        <span class="tag level">A–C</span>
+      </div>
+
+      <h2>Контроль, тестирование и оценка результата обучения</h2>
+      <p>
+        В официальной структуре КТ контроль рассматривается как модель управления качеством образовательного
+        процесса и его результата: объект, функции, формы измерения и оценки. В словаре Азимова и Щукина
+        контроль представлен через термины: текущий контроль, итоговый контроль, конечный контроль,
+        письменный контроль, устный контроль, тест, тестирование, валидность, надёжность, объект контроля,
+        оценка, отметка, анализ ошибок.
+      </p>
+
+      <div class="terms">
+        <div class="term-card">
+          <b>Контроль</b>
+          <span>
+            Проверка хода и результата обучения, связанная с выявлением уровня знаний, навыков и умений.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Текущий контроль</b>
+          <span>
+            Проводится в процессе обучения и позволяет отслеживать усвоение материала на отдельных этапах.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Итоговый контроль</b>
+          <span>
+            Соотносится с проверкой результата за завершённый период обучения.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Тестирование</b>
+          <span>
+            Форма измерения результата обучения с использованием тестовых заданий и критериев оценки.
+          </span>
+        </div>
+      </div>
+
+      <div class="source-note">
+        Источник: Азимов Э.Г., Щукин А.Н. Тематический указатель терминов: блок «Контроль в обучении», с. 438–439.
+      </div>
+
+      <div class="test-block">
+        <div class="test-title">
+          <h4>Тест по разделу 6</h4>
+          <span class="hint">Выберите один или несколько правильных ответов.</span>
+        </div>
+
+        <article class="test-card" data-answer="B,D,F">
+          <div class="question-head">
+            <div class="q-number">1</div>
+            <div class="q-text">
+              Термины контроля в обучении, представленные в тематическом указателе словаря
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Сметный контроль</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Текущий контроль</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Складской контроль</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Итоговый контроль</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Валютный контроль</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Письменный контроль</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, D, F.</p>
+            <p>
+              <b>Объяснение:</b> в блоке «Контроль в обучении» представлены текущий, итоговый, письменный,
+              устный и другие виды контроля. Остальные варианты относятся не к методике обучения языку.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, тематический указатель, с. 438–439.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="C">
+          <div class="question-head">
+            <div class="q-number">2</div>
+            <div class="q-text">
+              Вид контроля, который проводится в конце учебного года и позволяет установить уровень успешности обучения
+            </div>
+          </div>
+
+          <label class="option"><input type="radio" name="az6q2" value="A"><span>Повседневный контроль</span></label>
+          <label class="option"><input type="radio" name="az6q2" value="B"><span>Устный контроль</span></label>
+          <label class="option"><input type="radio" name="az6q2" value="C"><span>Итоговый контроль</span></label>
+          <label class="option"><input type="radio" name="az6q2" value="D"><span>Письменный контроль</span></label>
+          <label class="option"><input type="radio" name="az6q2" value="E"><span>Фронтальный контроль</span></label>
+          <label class="option"><input type="radio" name="az6q2" value="F"><span>Индивидуальный контроль</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> C.</p>
+            <p>
+              <b>Объяснение:</b> итоговый контроль соотносится с проверкой результата обучения за завершённый
+              период, в том числе в конце учебного года.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, тематический указатель «Контроль в обучении», с. 438–439; образец теста.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="A,D,E">
+          <div class="question-head">
+            <div class="q-number">3</div>
+            <div class="q-text">
+              Показатели качества теста и тестирования
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Валидность теста</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Декоративность теста</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Коммерческая стоимость теста</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Надёжность теста</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Критериальная ориентированность теста</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Товарная ликвидность теста</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, D, E.</p>
+            <p>
+              <b>Объяснение:</b> валидность, надёжность и критериально-ориентированный тест относятся к системе
+              лингводидактического тестирования и контроля результата обучения.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, тематический указатель «Контроль в обучении», с. 438–439.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="B,E">
+          <div class="question-head">
+            <div class="q-number">4</div>
+            <div class="q-text">
+              Формы контроля, различающиеся по способу речевого предъявления ответа
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Конечный контроль</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Письменный контроль</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Текущий контроль</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Итоговый контроль</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Устный контроль</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Повседневный контроль</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, E.</p>
+            <p>
+              <b>Объяснение:</b> письменный и устный контроль различаются по форме предъявления ответа,
+              тогда как текущий, итоговый и конечный контроль связаны главным образом с этапом проверки.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, тематический указатель «Контроль в обучении», с. 438–439.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="az-7">
+      <div class="section-label">
+        <span class="tag">Раздел 7</span>
+        <span class="tag">КТ: тема 10</span>
+        <span class="tag level">A–C</span>
+      </div>
+
+      <h2>Компетенции и профессиональная подготовка учителя</h2>
+      <p>
+        Официальная тема КТ включает компетентностные векторы развития личности учителя: структуру деятельности,
+        тип мышления, способности. В словаре Азимова и Щукина в блоке целей и задач обучения представлены
+        термины компетентность, компетенция, коммуникативная компетенция, профессиональная компетенция,
+        речевая, языковая, социокультурная, стратегическая и другие компетенции.
+      </p>
+
+      <div class="terms">
+        <div class="term-card">
+          <b>Компетентность</b>
+          <span>
+            Качество личности, связанное с готовностью и способностью действовать на основе знаний, опыта и умений.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Компетенция</b>
+          <span>
+            Сфера знаний, умений и способов деятельности, необходимая для выполнения определённых задач.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Коммуникативная компетенция</b>
+          <span>
+            Способность использовать язык в речевом общении с учётом целей, ситуации и норм коммуникации.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Профессиональная компетенция</b>
+          <span>
+            Совокупность качеств и умений, обеспечивающих успешную профессиональную деятельность преподавателя.
+          </span>
+        </div>
+      </div>
+
+      <div class="source-note">
+        Источник: Азимов Э.Г., Щукин А.Н. Тематический указатель терминов: блок «Цели и задачи обучения», с. 436.
+      </div>
+
+      <div class="test-block">
+        <div class="test-title">
+          <h4>Тест по разделу 7</h4>
+          <span class="hint">Выберите один или несколько правильных ответов.</span>
+        </div>
+
+        <article class="test-card" data-answer="B,D,F">
+          <div class="question-head">
+            <div class="q-number">1</div>
+            <div class="q-text">
+              Компетенции, представленные в тематическом указателе словаря
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Коммерческая компетенция</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Коммуникативная компетенция</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Складская компетенция</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Профессиональная компетенция</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Тарифная компетенция</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Социокультурная компетенция</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, D, F.</p>
+            <p>
+              <b>Объяснение:</b> в тематическом указателе названы коммуникативная, профессиональная,
+              социокультурная и другие компетенции, связанные с обучением языку.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, тематический указатель, с. 436.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="C">
+          <div class="question-head">
+            <div class="q-number">2</div>
+            <div class="q-text">
+              Компетенция, связанная со способностью использовать язык в речевом общении с учётом цели и ситуации
+            </div>
+          </div>
+
+          <label class="option"><input type="radio" name="az7q2" value="A"><span>Фонологическая компетенция</span></label>
+          <label class="option"><input type="radio" name="az7q2" value="B"><span>Лексическая компетенция</span></label>
+          <label class="option"><input type="radio" name="az7q2" value="C"><span>Коммуникативная компетенция</span></label>
+          <label class="option"><input type="radio" name="az7q2" value="D"><span>Грамматическая компетенция</span></label>
+          <label class="option"><input type="radio" name="az7q2" value="E"><span>Орфоэпическая компетенция</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> C.</p>
+            <p>
+              <b>Объяснение:</b> коммуникативная компетенция охватывает способность пользоваться языком в общении
+              с учётом ситуации, цели, адресата и норм речевого взаимодействия.
+            </p>
+            <p><b>Источник:</b> Официальная литература №1, тематический указатель «Цели и задачи обучения», с. 436.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="A,C,E">
+          <div class="question-head">
+            <div class="q-number">3</div>
+            <div class="q-text">
+              Профессиональные умения учителя-филолога, связанные с анализом, организацией и проектированием учебной деятельности
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Гностические умения</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Бухгалтерские умения</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Организаторские умения</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Таможенные умения</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Проектировочные умения</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Логистические умения</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, C, E.</p>
+            <p>
+              <b>Объяснение:</b> гностические, организаторские и проектировочные умения относятся к профессиональной
+              компетенции учителя-филолога и встречаются в официальном образце теста.
+            </p>
+            <p><b>Источник:</b> Официальная структура КТ и образец теста по методике преподавания русского языка.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="B,E">
+          <div class="question-head">
+            <div class="q-number">4</div>
+            <div class="q-text">
+              Компоненты, непосредственно связанные с компетентностным развитием учителя в официальной теме КТ
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Товарный оборот</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Структура деятельности</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Складской учёт</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Коммерческая отчётность</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Тип мышления</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Транспортная схема</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, E.</p>
+            <p>
+              <b>Объяснение:</b> в официальной теме КТ названы компетентностные векторы развития личности учителя:
+              структура деятельности, тип мышления, способности.
+            </p>
+            <p><b>Источник:</b> Спецификация КТ, тема 10.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="book" id="novikov">
+      <div class="book-head">
+        <div class="meta">Официальная литература №9</div>
+        <h2>Новиков А.М., Новиков Д.А. Методология: словарь системы основных понятий</h2>
+        <p>
+          Из этой книги берём понятия, которые помогают понять методологическую систему преподавания:
+          методология, деятельность, организация деятельности, цель, задача, система, модель, анализ,
+          проектирование, контроль, результат. Лишние общенаучные и управленческие темы не включаются.
+        </p>
+      </div>
+    </section>
+        <section class="section" id="nov-1">
+      <div class="section-label">
+        <span class="tag">Раздел 1</span>
+        <span class="tag">КТ: тема 1</span>
+        <span class="tag">КТ: тема 2</span>
+        <span class="tag level">A–B</span>
+      </div>
+
+      <h2>Методология как учение об организации деятельности</h2>
+      <p>
+        В словаре Новиковых методология определяется как учение об организации деятельности.
+        Для методики преподавания русского языка это важно потому, что обучение рассматривается не как случайный
+        набор приёмов, а как организованная деятельность с целью, задачами, средствами, результатом и контролем.
+      </p>
+
+      <div class="terms">
+        <div class="term-card">
+          <b>Методология</b>
+          <span>
+            Учение об организации деятельности; может рассматриваться применительно к учебной, профессиональной,
+            научной, практической и другим видам деятельности.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Учебная деятельность</b>
+          <span>
+            Вид деятельности, направленный на усвоение знаний, способов действия, формирование умений и развитие личности.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Профессиональная деятельность</b>
+          <span>
+            Деятельность, выполняемая в определённой профессиональной сфере и требующая системы знаний, умений,
+            способов организации и оценки результата.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Педагогическая деятельность</b>
+          <span>
+            Частный вид профессиональной деятельности, который может рассматриваться через общие категории методологии.
+          </span>
+        </div>
+      </div>
+
+      <div class="source-note">
+        Источник: Новиков А.М., Новиков Д.А. Методология: словарь системы основных понятий. Предисловие, с. 3–4.
+      </div>
+
+      <div class="test-block">
+        <div class="test-title">
+          <h4>Тест по разделу 1</h4>
+          <span class="hint">Выберите один или несколько правильных ответов.</span>
+        </div>
+
+        <article class="test-card" data-answer="B">
+          <div class="question-head">
+            <div class="q-number">1</div>
+            <div class="q-text">
+              Методология в словаре Новиковых определяется как
+            </div>
+          </div>
+
+          <label class="option"><input type="radio" name="nov1q1" value="A"><span>Совокупность языковых норм письменной речи</span></label>
+          <label class="option"><input type="radio" name="nov1q1" value="B"><span>Учение об организации деятельности</span></label>
+          <label class="option"><input type="radio" name="nov1q1" value="C"><span>Перечень упражнений по школьному курсу русского языка</span></label>
+          <label class="option"><input type="radio" name="nov1q1" value="D"><span>Система правил орфоэпического анализа</span></label>
+          <label class="option"><input type="radio" name="nov1q1" value="E"><span>Описание структуры художественного текста</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B.</p>
+            <p>
+              <b>Объяснение:</b> в предисловии словаря прямо указано: методология — это учение об организации деятельности.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, предисловие, с. 3.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="A,C,E">
+          <div class="question-head">
+            <div class="q-number">2</div>
+            <div class="q-text">
+              Виды деятельности, которые Новиковы выделяют при рассмотрении методологии
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Игровая деятельность</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Складская деятельность</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Учебная деятельность</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Тарифная деятельность</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Трудовая деятельность</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Закупочная деятельность</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, C, E.</p>
+            <p>
+              <b>Объяснение:</b> авторы исходят из классификации деятельности по целевой направленности:
+              игра, учение, труд. Поэтому методология может рассматриваться применительно к игровой,
+              учебной и трудовой деятельности.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, предисловие, с. 3.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="B,D">
+          <div class="question-head">
+            <div class="q-number">3</div>
+            <div class="q-text">
+              Формы профессиональной деятельности, названные в предисловии словаря
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Складская деятельность</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Практическая деятельность</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Коммерческая отчётность</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Научная деятельность</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Тарифное регулирование</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Инвентаризационная деятельность</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, D.</p>
+            <p>
+              <b>Объяснение:</b> профессиональная деятельность подразделяется на практическую деятельность,
+              а также специфические формы профессиональной деятельности, среди которых названа наука.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, предисловие, с. 3.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="nov-2">
+      <div class="section-label">
+        <span class="tag">Раздел 2</span>
+        <span class="tag">КТ: тема 2</span>
+        <span class="tag">КТ: тема 10</span>
+        <span class="tag level">B–C</span>
+      </div>
+
+      <h2>Деятельность, активность и уровни деятельности</h2>
+      <p>
+        Для подготовки к КТ важна связь методологии с деятельностным подходом. Новиковы рассматривают активность
+        как динамическое свойство человеческой деятельности и выделяют уровни активности личности:
+        ситуативную, надситуативную и творческую. Эти понятия помогают понять структуру деятельности учителя,
+        тип мышления и развитие профессиональных способностей.
+      </p>
+
+      <div class="terms">
+        <div class="term-card">
+          <b>Активность</b>
+          <span>
+            Динамическое свойство человеческой деятельности, источник преобразования или поддержания связей
+            с окружающим миром.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Ситуативная активность</b>
+          <span>
+            Активность, возникающая для решения отдельных частных задач и завершающаяся после их решения.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Надситуативная активность</b>
+          <span>
+            Способность личности подниматься над требованиями ситуации и ставить цели сверх текущей задачи.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Творческая активность</b>
+          <span>
+            Самостоятельная постановка проблем и их решение.
+          </span>
+        </div>
+      </div>
+
+      <div class="source-note">
+        Источник: Новиков А.М., Новиков Д.А. Методология: словарь системы основных понятий. Статья «Активность», с. 9–10.
+      </div>
+
+      <div class="test-block">
+        <div class="test-title">
+          <h4>Тест по разделу 2</h4>
+          <span class="hint">Выберите один или несколько правильных ответов.</span>
+        </div>
+
+        <article class="test-card" data-answer="A,C,E">
+          <div class="question-head">
+            <div class="q-number">1</div>
+            <div class="q-text">
+              Уровни активности личности, выделенные Новиковыми
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Ситуативная активность</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Формальная активность</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Надситуативная активность</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Регистрационная активность</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Творческая активность</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Архивная активность</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, C, E.</p>
+            <p>
+              <b>Объяснение:</b> Новиковы выделяют три уровня активности личности:
+              ситуативную, надситуативную и творческую.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, статья «Активность», с. 9.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="D">
+          <div class="question-head">
+            <div class="q-number">2</div>
+            <div class="q-text">
+              Уровень деятельности, соответствующий человеку-исполнителю
+            </div>
+          </div>
+
+          <label class="option"><input type="radio" name="nov2q2" value="A"><span>Стратегический уровень</span></label>
+          <label class="option"><input type="radio" name="nov2q2" value="B"><span>Проектировочный уровень</span></label>
+          <label class="option"><input type="radio" name="nov2q2" value="C"><span>Творческий уровень</span></label>
+          <label class="option"><input type="radio" name="nov2q2" value="D"><span>Операционный уровень</span></label>
+          <label class="option"><input type="radio" name="nov2q2" value="E"><span>Методологический уровень</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> D.</p>
+            <p>
+              <b>Объяснение:</b> в статье указано: операционный уровень — это человек-исполнитель;
+              тактический — активный деятель; стратегический — творческий человек.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, статья «Активность», с. 9–10.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="B,E">
+          <div class="question-head">
+            <div class="q-number">3</div>
+            <div class="q-text">
+              Характеристики творческой активности по словарю Новиковых
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Выполнение отдельной операции без постановки новой задачи</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Самостоятельная постановка проблем</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Повторение заданного алгоритма без изменения условий</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Следование частной инструкции без выхода за ситуацию</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Самостоятельное решение поставленных проблем</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Ограничение деятельности отдельными операциями</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, E.</p>
+            <p>
+              <b>Объяснение:</b> творческая активность определяется как самостоятельная постановка проблем
+              и их решение.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, статья «Активность», с. 9.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="nov-3">
+      <div class="section-label">
+        <span class="tag">Раздел 3</span>
+        <span class="tag">КТ: тема 2</span>
+        <span class="tag">КТ: тема 3</span>
+        <span class="tag level">B</span>
+      </div>
+
+      <h2>Цель, задача и алгоритм деятельности</h2>
+      <p>
+        Методика преподавания русского языка как система не может существовать без цели, задач и последовательности
+        действий. В словаре Новиковых алгоритм определяется как точное и однозначно понимаемое предписание
+        о выполнении операций, приводящих к решению задач определённого класса.
+      </p>
+
+      <div class="terms">
+        <div class="term-card">
+          <b>Алгоритм</b>
+          <span>
+            Точное предписание последовательности действий, приводящих к решению задачи определённого класса.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Определённость алгоритма</b>
+          <span>
+            Каждое правило алгоритма должно быть однозначным.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Конечность алгоритма</b>
+          <span>
+            Число шагов алгоритма при любых начальных данных должно быть конечным.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Массовость алгоритма</b>
+          <span>
+            Алгоритм применим к решению класса задач, различающихся исходными данными.
+          </span>
+        </div>
+      </div>
+
+      <div class="source-note">
+        Источник: Новиков А.М., Новиков Д.А. Методология: словарь системы основных понятий. Статья «Алгоритм», с. 10–11.
+      </div>
+
+      <div class="test-block">
+        <div class="test-title">
+          <h4>Тест по разделу 3</h4>
+          <span class="hint">Выберите один или несколько правильных ответов.</span>
+        </div>
+
+        <article class="test-card" data-answer="C">
+          <div class="question-head">
+            <div class="q-number">1</div>
+            <div class="q-text">
+              Алгоритм в общем смысле определяется как
+            </div>
+          </div>
+
+          <label class="option"><input type="radio" name="nov3q1" value="A"><span>Описание эмоционального состояния субъекта деятельности</span></label>
+          <label class="option"><input type="radio" name="nov3q1" value="B"><span>Список понятий без порядка их применения</span></label>
+          <label class="option"><input type="radio" name="nov3q1" value="C"><span>Правило последовательности действий, приводящих к решению задачи</span></label>
+          <label class="option"><input type="radio" name="nov3q1" value="D"><span>Форма оценки художественного текста</span></label>
+          <label class="option"><input type="radio" name="nov3q1" value="E"><span>Результат случайного выбора учебного материала</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> C.</p>
+            <p>
+              <b>Объяснение:</b> алгоритм определяется как точное, однозначно понимаемое предписание
+              о выполнении операций в определённой последовательности.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, статья «Алгоритм», с. 10.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="A,D,F">
+          <div class="question-head">
+            <div class="q-number">2</div>
+            <div class="q-text">
+              Свойства алгоритма, названные Новиковыми
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Дискретность</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Декоративность</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Коммерческая доходность</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Конечность</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Стилистическая выразительность</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Определённость</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, D, F.</p>
+            <p>
+              <b>Объяснение:</b> среди свойств алгоритма названы дискретность, конечность, определённость,
+              массовость и правильность. В вопросе взяты три фактических свойства.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, статья «Алгоритм», с. 10–11.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="B,E">
+          <div class="question-head">
+            <div class="q-number">3</div>
+            <div class="q-text">
+              Требования к алгоритму, связанные с его применением в деятельности
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Наличие художественного подтекста</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Однозначность предписываемых действий</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Зависимость результата от случайной оценки</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Отсутствие конечного результата</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Получение результата за конечное число операций</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Замена операций произвольным перечнем терминов</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, E.</p>
+            <p>
+              <b>Объяснение:</b> алгоритм должен быть определённым, то есть однозначным, и результативным:
+              при выполнении конечного числа операций должен быть получен искомый результат.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, статья «Алгоритм», с. 10–11.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+        <section class="section" id="nov-4">
+      <div class="section-label">
+        <span class="tag">Раздел 4</span>
+        <span class="tag">КТ: тема 2</span>
+        <span class="tag">КТ: тема 9</span>
+        <span class="tag level">B–C</span>
+      </div>
+
+      <h2>Система и системное описание деятельности</h2>
+      <p>
+        Для методики преподавания русского языка важно видеть обучение как систему: в ней есть цель, содержание,
+        методы, средства, участники, условия, контроль и результат. В методологическом смысле система понимается
+        не как случайная совокупность элементов, а как целостность, элементы которой находятся во взаимосвязи.
+      </p>
+
+      <div class="terms">
+        <div class="term-card">
+          <b>Система</b>
+          <span>
+            Целостная совокупность взаимосвязанных элементов, обладающая структурой и функциями.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Структура системы</b>
+          <span>
+            Устойчивые связи между элементами системы, определяющие её внутреннюю организацию.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Функция системы</b>
+          <span>
+            Назначение системы или её компонента в целостной деятельности.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Системный подход</b>
+          <span>
+            Рассмотрение объекта через состав, структуру, связи, функции, условия существования и результат.
+          </span>
+        </div>
+      </div>
+
+      <div class="source-note">
+        Источник: Новиков А.М., Новиков Д.А. Методология: словарь системы основных понятий. Алфавитный указатель:
+        «Система», «Системный анализ», «Системный подход», с. 206–208.
+      </div>
+
+      <div class="test-block">
+        <div class="test-title">
+          <h4>Тест по разделу 4</h4>
+          <span class="hint">Выберите один или несколько правильных ответов.</span>
+        </div>
+
+        <article class="test-card" data-answer="B,D">
+          <div class="question-head">
+            <div class="q-number">1</div>
+            <div class="q-text">
+              Признаки системного рассмотрения учебной деятельности
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Рассмотрение учебного действия вне цели и результата</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Выявление состава и связей элементов деятельности</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Описание элемента без отношения к целому</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Установление структуры, функций и условий деятельности</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Замена структуры произвольным перечнем компонентов</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Исключение контроля из анализа результата деятельности</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, D.</p>
+            <p>
+              <b>Объяснение:</b> системное рассмотрение предполагает выявление состава, структуры, связей,
+              функций и условий деятельности. В методике это помогает описывать обучение как целостный процесс.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, алфавитный указатель: «Система», «Системный подход», с. 206–208.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="C">
+          <div class="question-head">
+            <div class="q-number">2</div>
+            <div class="q-text">
+              Методологическая характеристика системы в учебном процессе
+            </div>
+          </div>
+
+          <label class="option"><input type="radio" name="nov4q2" value="A"><span>Совокупность элементов без устойчивых связей</span></label>
+          <label class="option"><input type="radio" name="nov4q2" value="B"><span>Набор отдельных действий без общей цели</span></label>
+          <label class="option"><input type="radio" name="nov4q2" value="C"><span>Целостность взаимосвязанных компонентов</span></label>
+          <label class="option"><input type="radio" name="nov4q2" value="D"><span>Перечень терминов без внутренней организации</span></label>
+          <label class="option"><input type="radio" name="nov4q2" value="E"><span>Последовательность действий без контроля результата</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> C.</p>
+            <p>
+              <b>Объяснение:</b> система рассматривается как целостное образование, где элементы связаны между собой
+              и выполняют функции внутри общего процесса.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, алфавитный указатель: «Система», с. 206–208.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="A,C,E">
+          <div class="question-head">
+            <div class="q-number">3</div>
+            <div class="q-text">
+              Компоненты методической системы преподавания русского языка
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Цель обучения</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Случайный набор понятий</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Содержание обучения</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Изолированное действие без задачи</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Методы и средства обучения</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Неупорядоченное перечисление упражнений</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, C, E.</p>
+            <p>
+              <b>Объяснение:</b> методическая система преподавания включает цель, содержание, методы, средства,
+              организацию, контроль и результат. В вопросе выбраны три системных компонента.
+            </p>
+            <p><b>Источник:</b> Официальная тема КТ 2; Официальная литература №9, системные понятия, с. 206–208.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="nov-5">
+      <div class="section-label">
+        <span class="tag">Раздел 5</span>
+        <span class="tag">КТ: тема 2</span>
+        <span class="tag">КТ: тема 3</span>
+        <span class="tag level">B–C</span>
+      </div>
+
+      <h2>Модель и моделирование в методологии деятельности</h2>
+      <p>
+        Модель в словаре Новиковых определяется как образ, аналог или вспомогательный объект, который используется
+        в познавательных целях и даёт новую информацию об основном объекте. В методике модель помогает описать
+        учебный процесс, структуру урока, действия учителя и учащихся, контроль результата и условия обучения.
+      </p>
+
+      <div class="terms">
+        <div class="term-card">
+          <b>Модель</b>
+          <span>
+            Образ, аналог или вспомогательный объект, используемый для познания объекта, процесса или явления.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Моделирование</b>
+          <span>
+            Построение и использование модели для изучения, описания, проектирования или оптимизации объекта.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Ингерентность модели</b>
+          <span>
+            Согласованность модели со средой, в которой ей предстоит функционировать.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Адекватность модели</b>
+          <span>
+            Достаточная полнота, точность и истинность модели для достижения поставленной цели.
+          </span>
+        </div>
+      </div>
+
+      <div class="source-note">
+        Источник: Новиков А.М., Новиков Д.А. Методология: словарь системы основных понятий. Статья «Модель», с. 85–86.
+      </div>
+
+      <div class="test-block">
+        <div class="test-title">
+          <h4>Тест по разделу 5</h4>
+          <span class="hint">Выберите один или несколько правильных ответов.</span>
+        </div>
+
+        <article class="test-card" data-answer="B">
+          <div class="question-head">
+            <div class="q-number">1</div>
+            <div class="q-text">
+              Модель в широком смысле в словаре Новиковых определяется как
+            </div>
+          </div>
+
+          <label class="option"><input type="radio" name="nov5q1" value="A"><span>Непроверяемое предположение без связи с объектом</span></label>
+          <label class="option"><input type="radio" name="nov5q1" value="B"><span>Образ или аналог объекта, процесса либо явления</span></label>
+          <label class="option"><input type="radio" name="nov5q1" value="C"><span>Частное действие без отношения к целостной системе</span></label>
+          <label class="option"><input type="radio" name="nov5q1" value="D"><span>Перечень этапов без познавательной функции</span></label>
+          <label class="option"><input type="radio" name="nov5q1" value="E"><span>Набор признаков, исключающий объект исследования</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B.</p>
+            <p>
+              <b>Объяснение:</b> в словаре модель определяется как образ или аналог объекта, процесса или явления,
+              а также как вспомогательный объект, используемый в познавательных целях.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, статья «Модель», с. 85.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="A,D,F">
+          <div class="question-head">
+            <div class="q-number">2</div>
+            <div class="q-text">
+              Требования, предъявляемые к моделям в словаре Новиковых
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Ингерентность</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Неопределённость</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Фрагментарность без цели</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Простота</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Изолированность от среды</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Адекватность</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, D, F.</p>
+            <p>
+              <b>Объяснение:</b> в статье указаны три основных требования к моделям: ингерентность,
+              простота и адекватность.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, статья «Модель», с. 85–86.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="C,E">
+          <div class="question-head">
+            <div class="q-number">3</div>
+            <div class="q-text">
+              Смысл адекватности модели по словарю Новиковых
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Максимальное усложнение модели независимо от цели</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Отказ от сравнения модели с моделируемым объектом</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Достаточная полнота модели для достижения цели</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Сохранение всех случайных свойств реальной ситуации</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Достаточная точность и истинность модели</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Исключение цели из оценки качества модели</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> C, E.</p>
+            <p>
+              <b>Объяснение:</b> адекватность модели означает, что она достаточно полна, точна и истинна
+              не вообще, а в той мере, которая позволяет достичь поставленной цели.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, статья «Модель», с. 86.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="A,C,E">
+          <div class="question-head">
+            <div class="q-number">4</div>
+            <div class="q-text">
+              Методические объекты, которые можно описывать через модель
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Структура урока русского языка</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Не связанный с обучением перечень действий</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Система контроля учебного результата</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Произвольный набор признаков без цели обучения</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Взаимодействие учителя и учащихся</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Случайное расположение терминов без учебной задачи</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, C, E.</p>
+            <p>
+              <b>Объяснение:</b> модель может применяться для описания учебного процесса, структуры урока,
+              взаимодействия участников и контроля результата, если она помогает понять или организовать деятельность.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, статья «Модель», с. 85–86.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="nov-6">
+      <div class="section-label">
+        <span class="tag">Раздел 6</span>
+        <span class="tag">КТ: тема 2</span>
+        <span class="tag">КТ: тема 10</span>
+        <span class="tag level">C</span>
+      </div>
+
+      <h2>Проектирование деятельности и рефлексия результата</h2>
+      <p>
+        Новиковы описывают проект как организованную деятельность, в которой важную роль играет рефлексия:
+        постоянный анализ целей, задач, процесса и результатов. В структуре проекта выделяются три фазы:
+        проектирования, технологическая и рефлексивная. Для методики это связано с планированием обучения,
+        выбором модели урока, организацией действий и оценкой результата.
+      </p>
+
+      <div class="terms">
+        <div class="term-card">
+          <b>Проектирование</b>
+          <span>
+            Предварительное построение будущей деятельности, её целей, модели, условий, программы и ожидаемого результата.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Фаза проектирования</b>
+          <span>
+            Этап, включающий концептуальную стадию, моделирование, конструирование и технологическую подготовку.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Технологическая фаза</b>
+          <span>
+            Фаза реализации системы и оформления результатов деятельности.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Рефлексивная фаза</b>
+          <span>
+            Фаза анализа целей, задач, процесса и результатов выполненной деятельности.
+          </span>
+        </div>
+      </div>
+
+      <div class="source-note">
+        Источник: Новиков А.М., Новиков Д.А. Методология: словарь системы основных понятий. Статья о проекте и фазах проекта, с. 140–141.
+      </div>
+
+      <div class="test-block">
+        <div class="test-title">
+          <h4>Тест по разделу 6</h4>
+          <span class="hint">Выберите один или несколько правильных ответов.</span>
+        </div>
+
+        <article class="test-card" data-answer="A,D,F">
+          <div class="question-head">
+            <div class="q-number">1</div>
+            <div class="q-text">
+              Фазы проекта, выделенные Новиковыми
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Фаза проектирования</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Фаза произвольного перечисления</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Фаза бессистемного выполнения</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Технологическая фаза</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Фаза исключения результата</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Рефлексивная фаза</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, D, F.</p>
+            <p>
+              <b>Объяснение:</b> в словаре выделяется триединство фаз проекта: фаза проектирования,
+              технологическая фаза и рефлексивная фаза.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, структура проекта, с. 140–141.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="B,E">
+          <div class="question-head">
+            <div class="q-number">2</div>
+            <div class="q-text">
+              Стадии, входящие в фазу проектирования
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Стадия итоговой отметки</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Концептуальная стадия</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Стадия случайного выбора действий</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Стадия внешнего оформления без модели</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Стадия моделирования</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Стадия исключения условий деятельности</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, E.</p>
+            <p>
+              <b>Объяснение:</b> фаза проектирования включает концептуальную стадию, стадию моделирования,
+              стадию конструирования и стадию технологической подготовки. В вопросе выбраны две из них.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, структура проекта, с. 140–141.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="C">
+          <div class="question-head">
+            <div class="q-number">3</div>
+            <div class="q-text">
+              Фаза проекта, связанная с анализом целей, задач, процесса и результатов
+            </div>
+          </div>
+
+          <label class="option"><input type="radio" name="nov6q3" value="A"><span>Концептуальная фаза</span></label>
+          <label class="option"><input type="radio" name="nov6q3" value="B"><span>Подготовительная фаза</span></label>
+          <label class="option"><input type="radio" name="nov6q3" value="C"><span>Рефлексивная фаза</span></label>
+          <label class="option"><input type="radio" name="nov6q3" value="D"><span>Операционная фаза</span></label>
+          <label class="option"><input type="radio" name="nov6q3" value="E"><span>Организационная фаза</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> C.</p>
+            <p>
+              <b>Объяснение:</b> рефлексия в проекте связана с постоянным анализом целей, задач, процесса
+              и результатов деятельности.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, структура проекта, с. 140.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="A,C,E">
+          <div class="question-head">
+            <div class="q-number">4</div>
+            <div class="q-text">
+              Этапы концептуальной стадии фазы проектирования
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Формулирование проблемы</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Исключение цели деятельности</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Определение цели</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Отказ от критериев выбора</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Выбор критериев</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Замена проблемы произвольной инструкцией</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, C, E.</p>
+            <p>
+              <b>Объяснение:</b> в концептуальной стадии названы этапы выявления противоречия,
+              формулирования проблемы, определения проблематики, определения цели и выбора критериев.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, структура проекта, с. 140–141.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="nov-7">
+      <div class="section-label">
+        <span class="tag">Раздел 7</span>
+        <span class="tag">КТ: тема 9</span>
+        <span class="tag">КТ: тема 10</span>
+        <span class="tag level">A–C</span>
+      </div>
+
+      <h2>Контроль, мониторинг и оценка результата деятельности</h2>
+      <p>
+        Для КТ контроль связан с управлением качеством образовательного процесса и его результата.
+        В методологической логике контроль не отделяется от цели и результата: он помогает установить,
+        насколько деятельность соответствует заданным критериям, а мониторинг позволяет регулярно отслеживать
+        состояние объекта и динамику процесса.
+      </p>
+
+      <div class="terms">
+        <div class="term-card">
+          <b>Контроль</b>
+          <span>
+            Проверка соответствия процесса или результата заданной цели, норме, критерию или ожидаемому состоянию.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Мониторинг</b>
+          <span>
+            Постоянный надзор и регулярное отслеживание состояния объекта, его параметров и динамики процессов.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Критерий</b>
+          <span>
+            Основание, показатель или признак, по которому производится оценка, сравнение или выбор.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Результат деятельности</b>
+          <span>
+            То, что получено в итоге деятельности и соотносится с поставленной целью и критериями оценки.
+          </span>
+        </div>
+      </div>
+
+      <div class="source-note">
+        Источник: Новиков А.М., Новиков Д.А. Методология: словарь системы основных понятий. Статьи «Контроль»,
+        «Мониторинг», «Критерий», алфавитный указатель, с. 58–59, 86–87, 207.
+      </div>
+
+      <div class="test-block">
+        <div class="test-title">
+          <h4>Тест по разделу 7</h4>
+          <span class="hint">Выберите один или несколько правильных ответов.</span>
+        </div>
+
+        <article class="test-card" data-answer="B,E">
+          <div class="question-head">
+            <div class="q-number">1</div>
+            <div class="q-text">
+              Методологические признаки мониторинга
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Разовое фиксирование результата без отслеживания изменений</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Регулярное отслеживание состояния объекта</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Исключение параметров объекта из наблюдения</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Отказ от изучения динамики процесса</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Изучение динамики происходящих процессов</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Замена наблюдения произвольным выводом</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, E.</p>
+            <p>
+              <b>Объяснение:</b> мониторинг определяется как постоянный надзор и регулярное отслеживание
+              состояния объекта и значений его параметров для изучения динамики процессов.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, статья «Мониторинг», с. 86–87.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="A,D,F">
+          <div class="question-head">
+            <div class="q-number">2</div>
+            <div class="q-text">
+              Компоненты контроля качества образовательного процесса в логике КТ
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Объект контроля</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Исключение функций контроля</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Отказ от формы измерения</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Функции контроля</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Разрыв оценки с результатом обучения</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Формы измерения и оценки</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> A, D, F.</p>
+            <p>
+              <b>Объяснение:</b> официальная тема КТ формулирует контроль как модель управления качеством
+              образовательного процесса и его результата: объект, функции, формы измерения и оценки.
+            </p>
+            <p><b>Источник:</b> Спецификация КТ, тема 9; Официальная литература №9, понятия контроля и критерия.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="C">
+          <div class="question-head">
+            <div class="q-number">3</div>
+            <div class="q-text">
+              Критерий в методологическом анализе деятельности выполняет функцию
+            </div>
+          </div>
+
+          <label class="option"><input type="radio" name="nov7q3" value="A"><span>Случайного элемента без связи с результатом</span></label>
+          <label class="option"><input type="radio" name="nov7q3" value="B"><span>Замены цели внешней формой описания</span></label>
+          <label class="option"><input type="radio" name="nov7q3" value="C"><span>Основания для оценки, сравнения или выбора</span></label>
+          <label class="option"><input type="radio" name="nov7q3" value="D"><span>Исключения контроля из деятельности</span></label>
+          <label class="option"><input type="radio" name="nov7q3" value="E"><span>Произвольного признака без проверочной функции</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> C.</p>
+            <p>
+              <b>Объяснение:</b> критерий используется как основание, по которому оценивают, сравнивают,
+              выбирают или устанавливают соответствие результата цели.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, статья «Критерий», с. 59.</p>
+          </div>
+        </article>
+
+        <article class="test-card" data-answer="B,D">
+          <div class="question-head">
+            <div class="q-number">4</div>
+            <div class="q-text">
+              Связь результата деятельности с методологической организацией обучения
+            </div>
+          </div>
+
+          <label class="option"><input type="checkbox" value="A"><span>Результат не соотносится с целью деятельности</span></label>
+          <label class="option"><input type="checkbox" value="B"><span>Результат проверяется через заданные критерии</span></label>
+          <label class="option"><input type="checkbox" value="C"><span>Результат исключает анализ процесса деятельности</span></label>
+          <label class="option"><input type="checkbox" value="D"><span>Результат связан с качеством организации процесса</span></label>
+          <label class="option"><input type="checkbox" value="E"><span>Результат заменяет цель до начала деятельности</span></label>
+          <label class="option"><input type="checkbox" value="F"><span>Результат не требует контроля и рефлексии</span></label>
+
+          <button class="check-btn" type="button">Показать результат</button>
+          <div class="result">
+            <p><b>Правильный ответ:</b> B, D.</p>
+            <p>
+              <b>Объяснение:</b> результат деятельности соотносится с целью, критериями и качеством организации процесса.
+              Поэтому контроль и рефлексия нужны для оценки результата обучения.
+            </p>
+            <p><b>Источник:</b> Официальная литература №9, статьи «Критерий», «Мониторинг», проектная структура, с. 59, 86–87, 140–141.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+        <section class="section" id="final-review">
+      <div class="section-label">
+        <span class="tag">Итоговое повторение</span>
+        <span class="tag">Сайт 2</span>
+      </div>
+
+      <h2>Что нужно запомнить по сайту 2</h2>
+      <p>
+        Этот сайт объединяет две официальные книги тест-центра: терминологическую базу методики обучения языкам
+        и общую методологическую систему понятий. Для подготовки к КТ важно не механически заучивать все статьи,
+        а понимать, какие термины связаны с методикой преподавания русского языка.
+      </p>
+
+      <div class="terms">
+        <div class="term-card">
+          <b>Официальная литература №1</b>
+          <span>
+            Даёт методические термины: подходы, принципы, речевая деятельность, упражнения, контроль,
+            компетенции, технологии обучения.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Официальная литература №9</b>
+          <span>
+            Даёт методологические понятия: методология, деятельность, система, модель, проектирование,
+            контроль, критерий, результат.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Связь с КТ</b>
+          <span>
+            Материал отобран по официальным темам КТ: методика как наука, методологическая система,
+            принципы, технологии, речевая деятельность, контроль и компетентность учителя.
+          </span>
+        </div>
+
+        <div class="term-card">
+          <b>Формат тестов</b>
+          <span>
+            Вопросы закрытой формы, с одним или несколькими правильными ответами. В одном вопросе — максимум
+            три правильных ответа.
+          </span>
+        </div>
+      </div>
+
+      <div class="source-note">
+        Источники сайта: Официальная литература №1 — Азимов Э.Г., Щукин А.Н.;
+        Официальная литература №9 — Новиков А.М., Новиков Д.А.
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">
+        <span class="tag">Подготовка к КТ</span>
+      </div>
+
+      <h2>Как повторять материал</h2>
+      <p>
+        Сначала прочитайте краткую теорию раздела, затем выполните тест. После нажатия кнопки
+        «Показать результат» сравните выбранные ответы с правильными и прочитайте объяснение.
+        Если ошибка повторяется, вернитесь к терминам этого раздела.
+      </p>
+
+      <ul class="compact-list">
+        <li>Для темы «методика как наука» повторите терминосистему и назначение методических понятий.</li>
+        <li>Для темы «методологическая система» повторите подход, цель, систему, модель и деятельность.</li>
+        <li>Для темы «принципы» повторите группы принципов и принцип коммуникативности.</li>
+        <li>Для темы «речевая деятельность» повторите аудирование, говорение, чтение, письмо.</li>
+        <li>Для темы «упражнения» повторите типы упражнений и их функцию.</li>
+        <li>Для темы «контроль» повторите виды контроля, тестирование, критерии и мониторинг.</li>
+        <li>Для темы «компетентность учителя» повторите компетенции и уровни деятельности.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <script>
+    function normalizeAnswers(values) {
+      return values
+        .map(value => value.trim())
+        .filter(Boolean)
+        .sort()
+        .join(",");
+    }
+
+    function arraysEqual(a, b) {
+      if (a.length !== b.length) return false;
+      const sortedA = [...a].sort();
+      const sortedB = [...b].sort();
+
+      for (let i = 0; i < sortedA.length; i++) {
+        if (sortedA[i] !== sortedB[i]) return false;
+      }
+
+      return true;
+    }
+
+    function countMatches(selected, correct) {
+      return selected.filter(value => correct.includes(value)).length;
+    }
+
+    function countWrong(selected, correct) {
+      return selected.filter(value => !correct.includes(value)).length;
+    }
+
+    function checkQuestion(card) {
+      const correctRaw = card.dataset.answer || "";
+      const correct = correctRaw
+        .split(",")
+        .map(item => item.trim())
+        .filter(Boolean);
+
+      const selected = Array.from(card.querySelectorAll("input:checked"))
+        .map(input => input.value.trim())
+        .filter(Boolean);
+
+      const result = card.querySelector(".result");
+      if (!result) return;
+
+      result.classList.remove("good", "partial", "bad", "show");
+
+      const oldStatus = result.querySelector(".status-line");
+      if (oldStatus) oldStatus.remove();
+
+      let statusText = "";
+      let statusClass = "";
+
+      const exact = arraysEqual(selected, correct);
+      const matches = countMatches(selected, correct);
+      const wrong = countWrong(selected, correct);
+      const missed = correct.length - matches;
+
+      if (exact) {
+        statusText = "Верно. Все правильные ответы выбраны.";
+        statusClass = "good";
+      } else if (selected.length > 0 && wrong <= 1 && missed <= 1 && matches > 0) {
+        statusText = "Частично верно. Есть одна неточность в выборе ответа.";
+        statusClass = "partial";
+      } else {
+        statusText = "Неверно. Проверьте правильные ответы и объяснение.";
+        statusClass = "bad";
+      }
+
+      const status = document.createElement("p");
+      status.className = "status-line";
+
+      const strong = document.createElement("b");
+      if (statusClass === "good") strong.className = "good-text";
+      if (statusClass === "partial") strong.className = "warn-text";
+      if (statusClass === "bad") strong.className = "bad-text";
+
+      strong.textContent = statusText;
+      status.appendChild(strong);
+
+      result.prepend(status);
+      result.classList.add(statusClass, "show");
+    }
+
+    document.querySelectorAll(".test-card").forEach(card => {
+      const button = card.querySelector(".check-btn");
+      if (!button) return;
+
+      button.addEventListener("click", () => {
+        checkQuestion(card);
+      });
+    });
+  </script>
+</body>
+</html>
